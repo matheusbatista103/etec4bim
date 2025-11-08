@@ -1,0 +1,217 @@
+/* parte do header */
+header {
+  background-color: black;  
+  background: rgba(0, 0, 0, 0.1);
+  padding: 15px 5%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;           
+  font-weight: 700;           /* Negrito */
+  color: #fff;               
+  letter-spacing: 1px;       /* Pequeno espaçamento entre letras */
+  text-transform: uppercase; /* Letras maiúsculas */
+  transition: color 0.3s ease, transform 0.3s ease; /* Efeito suave */
+}
+
+.logo:hover {
+  color: red;           /* mudança de cor */
+  transform: scale(1.02);   /* crescimento */
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at top left, #0d0d0d 10%, #1a1a1a 40%, #000 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed; /* 🔥 Fixa o efeito no fundo */
+  top: 0;
+  left: 0;
+  width: 100vw;    /* Largura da janela */
+  height: 100vh;   /* Altura da janela */
+  background: conic-gradient(
+    from 0deg,
+    #e50914,
+    #ff007f,
+    #5f27cd,
+    #00d2d3,
+    #e50914
+  );
+  animation: spin 12s linear infinite;
+  filter: blur(200px);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Animação suave de rotação do brilho */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Conteúdo acima do efeito */
+main, header, footer {
+  position: relative;
+  z-index: 1;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #e50914;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu li a:hover,
+.menu li a.ativo {
+  color: #e50914;
+}
+
+/* ======== CONTEÚDO PRINCIPAL ======== */
+.avaliacao-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 60px;
+}
+
+/* ======== CARD DO FILME ======== */
+.filme-card {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 850px;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+}
+
+.filme-capa {
+  width: 320px;
+  max-height: 500px;    
+  object-fit: cover;   
+  border-radius: 8px;   
+}
+
+
+.filme-info {
+  padding: 20px;
+  flex: 1;
+}
+
+.sinopse {
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+/* ======== ESTRELAS ======== */
+.avaliacao-estrelas {
+  font-size: 28px;
+  color: #444;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.estrela {
+  transition: color 0.2s;
+}
+
+.estrela:hover,
+.estrela.ativo {
+  color: #e50914;
+}
+
+/* ======== TEXTAREA ======== */
+textarea {
+  width: 80%;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px;
+  resize: none;
+  margin-bottom: 15px;
+}
+
+/* ======== BOTÃO ======== */
+.btn-enviar {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-enviar:hover {
+  background-color: #ff1a1a;
+}
+
+/*parte do rodape*/
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgb(0, 0, 0 ,0.1); /* fundo escuro */
+    color: #ccc;
+    font-size: 14px;
+    position: fixed ;  /* deixa fixo no fim da tela */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+/*fecho o rodape*/
+
+/*responsivo*/
+  @media (max-width: 768px) {
+    .logo {
+      font-size: 24px;
+    }
+  
+    .menu li a {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+  
+    .movie-image {
+      height: 300px;
+    }
+  }
+  
+
