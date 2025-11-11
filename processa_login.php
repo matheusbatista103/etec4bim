@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 include_once 'conexao.php';
 
 $email = $_POST['email'];
@@ -13,19 +12,25 @@ $stmt->bindParam(':senha', $senha);
 $stmt->execute();
 
 if ($stmt->rowCount() == 1) {
+
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+
     $_SESSION['idUsuario'] = $resultado['idUsuario'];
     $_SESSION['nome'] = $resultado['nome'];
     $_SESSION['email'] = $resultado['email'];
 
-    header('Location: principal.php');
-    exit;
-    
+    // Verifica se o usuário logado é o administrador
+    if ($resultado['email'] === 'admin@gmail.com') {
+        header('Location: adm/painel.php');
+        exit;
+    } else {
+        header('Location: principal.php');
+        exit;
+    }
+
 } else {
-    $_SESSION['erro'] = "E-mail ou senha incorretos!"; // mensagem de erro
+    $_SESSION['erro'] = "E-mail ou senha incorretos!";
     header('Location: login.php');
     exit;
 }
 ?>
-

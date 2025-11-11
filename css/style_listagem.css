@@ -1,0 +1,113 @@
+/* Fundo azul escuro */
+body {
+    background-color: #003366;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 15px;
+    margin: 0;
+}
+
+/* Container branco maior com altura dinâmica */
+.container {
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    width: 900px;
+    max-width: 95vw;
+    height: auto;      /* altura ajusta conforme conteúdo */
+    color: #222;
+    margin: 40px auto;
+    overflow-y: auto; /* adiciona scroll se conteúdo passar da altura */
+}
+
+/* Alertas */
+.alert {
+    padding: 12px 18px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+/* Tabela estilizada */
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+table.table thead th {
+    background-color: #003366;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 700;
+    border-radius: 8px 8px 0 0;
+}
+
+table.table tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+/* Hover nas linhas */
+table.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Botões */
+.btn-group .btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-right: 6px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #1e7e34;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+/* Botão Voltar */
+.btn-warning {
+    background-color: #ff9800;
+    color: #222;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #cc7a00;
+    color: #111;
+}
+
