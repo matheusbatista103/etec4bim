@@ -32,7 +32,7 @@
                 <button type="submit">Entrar</button>
             </form>
 
-            <a href="cadastro.php">Novo por aqui? Cadastre=se agora.</a>
+            <a class='cadastro' href="cadastro.php">Novo por aqui? Cadastre-se agora.</a>
 
         </div>
     </div>

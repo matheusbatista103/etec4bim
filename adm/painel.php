@@ -20,7 +20,7 @@
     <?php include '../includes/header.php'; ?>
 
     <div class="container">
-        <h1>Painel do administrad</h1>
+        <h1>Painel do administrador</h1>
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
             <a href="form_cadastrar.php" type="button" class="btn btn-danger">Cadastrar</a>
             <a href="listar.php" type="button" class="btn btn-warning">Listar</a>

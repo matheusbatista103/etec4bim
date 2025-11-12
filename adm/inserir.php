@@ -11,7 +11,9 @@ $imagem = null;
 // Verifica se o usuário enviou imagem
 if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0) {
     $nomeArquivo = basename($_FILES['imagem']['name']);
-    $caminhoDestino = "../uploads/" . $nomeArquivo;
+    // Use um nome único com timestamp para evitar conflitos
+    $nomeUnico = time() . '_' . $nomeArquivo;
+    $caminhoDestino = "../uploads/" . $nomeUnico;
 
     // Cria a pasta de uploads caso não exista
     if (!is_dir("../uploads")) {
@@ -20,7 +22,8 @@ if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0) {
 
     // Move o arquivo para a pasta
     if (move_uploaded_file($_FILES['imagem']['tmp_name'], $caminhoDestino)) {
-        $imagem = $caminhoDestino;
+        // Salva o caminho relativo à raiz (sem ../)
+        $imagem = "uploads/" . $nomeUnico;
     }
 }
 
@@ -42,11 +45,11 @@ if ($stmt->execute()) {
     <head>
         <meta charset="UTF-8">
         <title>Filme Inserido</title>
-        <link rel="stylesheet" href="../css/style_listar.css">
+        <link rel="stylesheet" href="../css/style_inserir.css">
     </head>
     <body>
         <div class="card">
-            <h2>✅ Filme inserido com sucesso!</h2>
+            <h2>Filme inserido com sucesso!</h2>
             <a href="form_cadastrar.php" class="btn">Cadastrar outro</a>
             <a href="listar.php" class="btn">Ver Lista</a>
         </div>
@@ -54,6 +57,6 @@ if ($stmt->execute()) {
     </html>
     <?php
 } else {
-    echo "❌ Erro ao inserir filme.";
+    echo "Erro ao inserir filme.";
 }
 ?>

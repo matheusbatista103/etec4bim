@@ -2,8 +2,8 @@
 session_start();
 include_once 'conexao.php';
 
-$email = $_POST['email'];
-$senha = $_POST['senha'];
+$email = $_POST['email'] ?? '';
+$senha = $_POST['senha'] ?? '';
 
 $consulta = "SELECT * FROM usuarios WHERE email = :email AND senha = :senha";
 $stmt = $pdo->prepare($consulta);
@@ -19,8 +19,8 @@ if ($stmt->rowCount() == 1) {
     $_SESSION['nome'] = $resultado['nome'];
     $_SESSION['email'] = $resultado['email'];
 
-    // Verifica se o usuário logado é o administrador
-    if ($resultado['email'] === 'admin@gmail.com') {
+    // redireciona para painel se for admin pelo email, caso contrário para principal
+    if (isset($resultado['email']) && $resultado['email'] === 'admin@gmail.com') {
         header('Location: adm/painel.php');
         exit;
     } else {

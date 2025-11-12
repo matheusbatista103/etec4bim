@@ -31,7 +31,13 @@ $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <hr>
         <div class="movie-grid">
             <?php if (empty($filmes)): ?>
-                <p>Nenhum filme cadastrado ainda. <a href="adicionar.php">Adicione um!</a></p>
+                <div class="empty-state">
+                    <div class="empty-state-content">
+                        <h3>Nenhum filme cadastrado ainda</h3>
+                        <p>Compartilhe sua primeira resenha!</p>
+                        <a href="adm/form_cadastrar.php" class="btn-add-film">+ Adicionar Filme</a>
+                    </div>
+                </div>
             <?php else: ?>
                 <?php foreach ($filmes as $filme): ?>
                     <div class="movie-card">

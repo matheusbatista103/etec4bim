@@ -1,8 +1,14 @@
+
 <body>
     <link rel="stylesheet" href="../css/style_cadastro.css">
     <div class="container">
-        <h2>CADASTRO DE FILMES</h2>
-        <form action="inserir.php" method="POST" enctype="multipart/form-data">
+        <div class="card-content">
+            <h2>CADASTRO DE FILMES</h2>
+            <?php if (isset($_SESSION['erro'])): ?>
+                <p class="error-msg"><?= htmlspecialchars($_SESSION['erro']) ?></p>
+                <?php unset($_SESSION['erro']); ?>
+            <?php endif; ?>
+            <form action="inserir.php" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <input type="text" name="nome" class="form-control" placeholder="Digite o nome do filme" required>
             </div>
@@ -25,9 +31,10 @@
 
             <button type="submit" class="btn btn-primary">Cadastrar</button>
             <a href="painel.php" type="button" class="btn btn-warning">Voltar</a>
-        </form>
+            </form>
+        </div>
     </div>
 
-    <?php include '../includes/rodape.php'; ?>
 </body>
 </html>
+ 

@@ -1,195 +1,166 @@
-/*parte do header*/
-header {
-  background-color: #000;
-  padding: 15px 5%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+:root {
+  --accent: #e50914;
+  --muted: #bfbfbf;
+  --surface: #0b0b0b;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+* {
+  box-sizing: border-box;
 }
 
-.logo {
-  font-size: 32px;
-  font-weight: 700;
-  color: #e50914;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.logo:hover {
-  color: #ff2a2a;
-  transform: scale(1.05);
-}
-
-/* Menu com mais cor */
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  padding: 0;
-  margin: 0;
-}
-
-.menu li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.menu li a:hover {
-  background: #e50914;
-  color: #fff;
-}
-/*fecho o header*/
-
-
-/* Fundo da página */
+/* ====== ESTRUTURA GERAL ====== */
 body {
-    background-color: #003366;
-    min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-/* Container centralizado */
+/* ====== CONTAINER PRINCIPAL ====== */
 .container {
-    background-color: #fff;
-    padding: 35px 45px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
-    width: 320px;
-    max-width: 90vw;
-    color: #222;
-    font-weight: 500;
-    text-align: center;
-
-    /* Centralização */
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  max-width: 900px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.4));
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.04);
+  display: block;
+  text-align: left;
 }
 
-
-/* Título */
+/* ====== TÍTULOS ====== */
 h2 {
-    font-size: 26px;
-    margin-bottom: 25px;
-    text-align: center;
-    color: #003366;
-    font-weight: 700;
+  margin: 0 0 14px;
+  font-size: 22px;
+  color: var(--accent);
+  font-weight: 800;
 }
 
-/* Inputs estilos modernos */
+/* ====== CONTEÚDO ====== */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-content h2 {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+/* ====== MENSAGEM DE ERRO ====== */
+.error-msg {
+  color: #ff9b9b;
+  text-align: left;
+  margin: 8px 0;
+}
+
+/* ====== CAMPOS DO FORMULÁRIO ====== */
 .form-control {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: transparent;
+  color: #fff;
 }
 
 .form-control:focus {
-    outline: none;
-    border-color: #003366;
-    box-shadow: 0 0 5px #003366;
+  outline: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  border-color: var(--accent);
 }
 
-/* Container dos botões para centralização vertical */
+/* ====== BOTÕES ====== */
 .btn-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* centraliza verticalmente dentro da div */
-    height: 120px;            /* define uma altura para essa área */
-    gap: 10px;
-    margin-top: 15px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 6px;
 }
 
-
-/* Botões estilo flat */
-button.btn-primary, a.btn-warning {
-    width: 150px;
-    padding: 12px 0;
-    border-radius: 8px;
-    border: none;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
+button.btn-primary,
+a.btn-warning {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 0;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 button.btn-primary {
-    background-color: #003366;
+  background: linear-gradient(90deg, var(--accent), #b0060f);
 }
 
 button.btn-primary:hover {
-    background-color: #002244;
+  filter: brightness(1.03);
+  transform: translateY(-2px);
 }
 
 a.btn-warning {
-    background-color: #ff9800;
-    color: #222;
+  background: #444;
+  padding: 10px 12px;
 }
 
-a.btn-warning:hover {
-    background-color: #cc7a00;
-    color: #111;
+/* ====== NOTAS/OBSERVAÇÕES ====== */
+.note {
+  color: var(--muted);
+  font-size: 13px;
 }
 
-/*parte do footer*/
-footer {
-  text-align: center;
-  padding: 15px;
-  background-color: #000;
-  color: #aaa;
-  font-size: 14px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.6);
-}
-/*fecho o footer*/
-
-/*responsivo*/
-@media (max-width: 768px) {
-  .logo {
-    font-size: 24px;
-  }
-
-  .menu {
-    gap: 15px;
-  }
-
-  .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  }
-
-  .movie-image {
-    height: 200px;
-  }
-
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 600px) {
   .container {
-    width: 90%;
-    height: auto;
-    padding: 25px;
+    padding: 18px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* ====== MODO HORIZONTAL ====== */
+@media (min-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    align-items: flex-start;
+    padding: 26px;
+    max-width: 960px;
+  }
+
+  .container::before {
+    content: '';
+    display: block;
+    width: 40%;
+    min-width: 260px;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.25),
+      rgba(0,0,0,0.45)
+    ),
+    url('../img/default.jpg') center/cover no-repeat;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6) inset;
+  }
+
+  form {
+    flex: 1;
+  }
+
+  .btn-container {
+    justify-content: flex-start;
   }
 }

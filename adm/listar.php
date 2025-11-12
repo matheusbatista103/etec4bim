@@ -73,7 +73,5 @@ require('../conexao.php');
 
     <a href="painel.php" class="btn btn-warning">Voltar</a>
 </div>
-
-<?php include '../includes/rodape.php'; ?>
 </body>
 </html>

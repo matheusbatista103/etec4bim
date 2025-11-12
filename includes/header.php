@@ -11,7 +11,7 @@
       }
       ?>
       <li><a href="principal.php" class="active">Início</a></li>
-      <li><a href="../sobre.php">Sobre</a></li>
+      <li><a href="sobre.php">Sobre</a></li>
       <?php
       if (isset($_SESSION['idUsuario'])) {
           // Usuário logado: mostra "Sair"

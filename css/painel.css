@@ -1,10 +1,42 @@
-/*parte do header*/
+/* painel.css — Tema Netflix Moderno (ajustado) */
+
+:root {
+  --accent: #e50914;
+  --accent-hover: #f40612;
+  --muted: #b3b3b3;
+  --surface: #141414;
+  --bg-dark: #000;
+  --bg-gradient: linear-gradient(135deg, #000 0%, #141414 40%, #1a1a1a 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======= BODY ======= */
+body {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ======= HEADER ======= */
 header {
-  background-color: #000;
+  width: 100%;
+  background-color: var(--bg-dark);
   padding: 15px 5%;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .navbar {
@@ -14,144 +46,115 @@ header {
 }
 
 .logo {
-  font-size: 32px;
-  font-weight: 700;
-  color: #e50914;
-  letter-spacing: 1px;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--accent);
   text-transform: uppercase;
-  transition: color 0.3s ease, transform 0.3s ease;
+  letter-spacing: 2px;
+  transition: 0.3s;
 }
 
 .logo:hover {
-  color: #ff2a2a;
+  color: var(--accent-hover);
   transform: scale(1.05);
 }
 
-/* Menu com mais cor */
 .menu {
   list-style: none;
   display: flex;
-  gap: 25px;
-  padding: 0;
-  margin: 0;
+  gap: 20px;
 }
 
 .menu li a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
 
 .menu li a:hover {
-  background: #e50914;
-  color: #fff;
-}
-/*fecho o header*/
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  background: var(--accent);
 }
 
-body {
-    background-color: #003366; /* Azul mais escuro */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    color: #000; /* Texto preto (porque agora o fundo do container é branco) */
-}
-
+/* ======= CONTAINER PRINCIPAL ======= */
 .container {
-    background-color: #fff; /* Fundo branco para o quadrado */
-    padding: 40px 60px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    text-align: center;
-    min-width: 280px;
-    width: 340px;       /* largura menor para o quadrado */
-    max-width: 100vw;    /* responsivo para telas pequenas */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 80px; /* espaço pro header e footer */
+  text-align: center;
 }
 
-h1, h2 {
-    margin-bottom: 20px;
-    color: #000; /* Texto preto */
+.container h1 {
+  color: var(--accent);
+  margin-bottom: 25px;
 }
 
 .btn-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
+/* ======= BOTÕES ======= */
 .btn {
-    font-size: 18px;
-    padding: 10px 20px;
-    width: 200px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, border 0.3s ease;
-    background-color: #fff;
-    border: 2px solid #000;
-    color: #000;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  text-align: center;
+  margin: 10px 8px;
 }
 
 .btn:hover {
-    background-color: #f0f0f0;
-    opacity: 0.9;
+  background: var(--accent-hover);
+  transform: scale(1.05);
 }
 
-/* Cores específicas para os botões */
-.btn-danger {
-    border-color: #dc3545;
-    color: #dc3545;
+.btn.secondary {
+  background: #333;
+  color: #ddd;
 }
 
-.btn-warning {
-    border-color: #ffc107;
-    color: #ffc107;
+.btn.danger {
+  background: #b00020;
 }
 
-/*parte do footer*/
+.btn.danger:hover {
+  background: #e50914;
+}
+
+/* ======= FOOTER ======= */
 footer {
+  width: 100%;
   text-align: center;
   padding: 15px;
-  background-color: #000;
-  color: #aaa;
+  background: #000;
+  color: #888;
   font-size: 14px;
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.7);
 }
-/*fecho o footer*/
 
-/*responsivo*/
-@media (max-width: 768px) {
-  .logo {
-    font-size: 24px;
+/* ======= RESPONSIVO ======= */
+@media (max-width: 800px) {
+  .btn {
+    width: 100%;
+    margin: 8px 0;
   }
 
   .menu {
-    gap: 15px;
-  }
-
-  .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  }
-
-  .movie-image {
-    height: 200px;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }

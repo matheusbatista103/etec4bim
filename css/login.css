@@ -65,7 +65,7 @@ html, body {
 
 body {
   background-image: url('../img/background.jpg'); 
-  background-size: cover;        
+ background-size: cover;       
   background-repeat: no-repeat;  
   background-position: center;   
   font-family: Arial, sans-serif;
@@ -89,6 +89,8 @@ body {
   flex-direction: column;
   gap: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+  /* garante centralização dos itens se ainda não tiver */
+  text-align: center;
 }
 
 /* Título */
@@ -136,6 +138,60 @@ body {
   gap: 20px;
 }
 
+/* estilo minimalista para o botão de cadastro */
+.cadastro {
+    display: inline-block;
+    margin: 16px auto 0;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: transparent;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: fit-content;
+}
+
+/* efeito sutil no hover/foco */
+.cadastro:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.cadastro:focus {
+    outline: 3px solid rgba(21,156,228,0.15);
+    outline-offset: 2px;
+}
+
+/* estilo minimalista para o botão de login no cadastro.php */
+.login {
+    display: inline-block;
+    margin: 16px auto 0;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: transparent;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: fit-content;
+}
+
+/* efeito sutil no hover/foco */
+.login:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.login:focus {
+    outline: 3px solid rgba(21,156,228,0.15);
+    outline-offset: 2px;
+}
+
 
 /*parte do rodape*/
 footer {
@@ -150,6 +206,7 @@ footer {
   width: 100%;
 }
 /*fecho o rodape*/
+
 
 /*responsivo*/
   @media (max-width: 768px) {
@@ -166,4 +223,4 @@ footer {
       height: 300px;
     }
   }
-  
+
