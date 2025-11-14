@@ -1,86 +1,91 @@
-/* Fundo azul escuro */
+/* ===== Fundo estilo Netflix ===== */
 body {
-    background-color: #003366;
+    background: #000000;
+    background: linear-gradient(135deg, #000 0%, #111 40%, #1a1a1a 100%);
     min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 15px;
-    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
 }
 
-/* Container branco centralizado */
+/* ===== Container estilo cartão Netflix ===== */
 .container {
-    background-color: #fff;
+    background: #141414;
     padding: 40px 40px 60px;
-    border-radius: 15px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-    width: 400px;
+    border-radius: 16px;
+    width: 420px;
     max-width: 95vw;
-    color: #222;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
     text-align: center;
+    color: #fff;
 }
 
-/* Título */
+/* ===== Título ===== */
 h2 {
-    margin-bottom: 30px;
-    color: #003366;
+    margin-bottom: 28px;
+    color: #e50914;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
-/* Inputs ocupando toda largura */
+/* ===== Inputs ===== */
 .mb-3 {
     margin-bottom: 20px;
 }
 
 .mb-3 input[type="text"] {
     width: 100%;
-    padding: 10px 14px;
+    padding: 12px 14px;
     font-size: 16px;
-    border: 2px solid #ccc;
     border-radius: 8px;
-    transition: border-color 0.3s ease;
+    background: #1f1f1f;
+    border: 2px solid #333;
+    color: #fff;
+    transition: 0.3s ease;
 }
 
 .mb-3 input[type="text"]:focus {
-    border-color: #003366;
+    border-color: #e50914;
     outline: none;
 }
 
-/* Botões empilhados */
+/* ===== Botões grandes ===== */
 .btn-primary,
 .btn-warning {
     display: block;
     width: 100%;
-    padding: 12px 0;
+    padding: 14px 0;
     font-size: 16px;
     font-weight: 700;
     border-radius: 10px;
-    cursor: pointer;
     border: none;
+    cursor: pointer;
     margin: 10px 0;
-    transition: background-color 0.3s ease;
+    transition: 0.3s;
     text-decoration: none;
-    color: white;
 }
 
-/* Botão Atualizar */
+/* Botão principal Netflix */
 .btn-primary {
-    background-color: #003366;
+    background-color: #e50914;
+    color: #fff;
 }
 
 .btn-primary:hover {
-    background-color: #002244;
+    background-color: #f40612;
 }
 
-/* Botão Voltar */
+/* Botão voltar */
 .btn-warning {
-    background-color: #ff9800;
-    color: #222;
+    background-color: #333;
+    color: #ddd;
 }
 
 .btn-warning:hover {
-    background-color: #cc7a00;
-    color: #111;
+    background-color: #444;
+    color: #fff;
 }
