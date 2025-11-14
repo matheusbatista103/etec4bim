@@ -1,11 +1,13 @@
 <?php
+// processa_cadastro.php
 session_start();
+
 include_once 'conexao.php';
 
-$nome = $_POST['nome'] ?? '';
-$email = $_POST['email'] ?? '';
-$senha = $_POST['senha'] ?? '';
-$confirmar_senha = $_POST['confirmar_senha'] ?? '';
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$senha = $_POST['senha'];
+$confirmar_senha = $_POST['confirmar_senha'];
 
 // Verificar se as senhas coincidem
 if ($senha !== $confirmar_senha) {
@@ -26,15 +28,12 @@ if ($stmt->rowCount() > 0) {
     exit;
 }
 
-// Gerar hash seguro da senha
-$hash = password_hash($senha, PASSWORD_DEFAULT);
-
-// Inserir novo usuário com senha criptografada
+// Inserir novo usuário (sem idReview, pois a coluna foi removida do banco)
 $inserir = "INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)";
 $stmt = $pdo->prepare($inserir);
 $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':email', $email);
-$stmt->bindParam(':senha', $hash);
+$stmt->bindParam(':senha', $senha);
 
 if ($stmt->execute()) {
     $_SESSION['sucesso'] = "Cadastro realizado com sucesso! Faça login.";

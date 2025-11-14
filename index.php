@@ -10,7 +10,7 @@
     
     <?php include __DIR__ . '/includes/header.php'; ?>
 
-    
+
     <div class="container">
         <div class="card">
             <h1>EtecFlix</h1>
