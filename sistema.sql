@@ -21,20 +21,22 @@ SET time_zone = "+00:00";
 -- Banco de dados: `sistema`
 --
 
+CREATE DATABASE IF NOT EXISTS `sistema` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `sistema`;
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `filmes`
 --
 
 CREATE TABLE `filmes` (
   `idFilmes` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  `descricao` varchar(255) DEFAULT NULL,
-  `data_lancamento` int(11) DEFAULT NULL,
-  `tempo_filme` varchar(255) DEFAULT NULL,
-  `imagem` varchar(255) DEFAULT NULL,
-  `genero` varchar(100) DEFAULT 'Outros'
+  `nome` varchar(255) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `data_lancamento` YEAR NULL,
+  `tempo_filme` varchar(255) NULL,
+  `imagem` varchar(255) NULL,
+  `genero` varchar(100) NOT NULL DEFAULT 'Outros'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
