@@ -84,7 +84,8 @@ if (isset($_SESSION['idUsuario']) && $_SERVER['REQUEST_METHOD'] === 'POST' && is
     body.light { background:#f5f5f5; color:#111; }
     body.light .logo { color:#111; }
     body.light .menu li a:hover { background:#ddd; color:#111; }
-    body.light .settings-toggle, body.light .btn-small, body.light .btn-danger-small { background:#d0d0d0; color:#fff; }
+    body.light .settings-toggle, body.light .btn-small, body.light .btn-danger-small { background:#6a6a6a; color:#fff; }
+    body.light .settings-toggle:hover, body.light .btn-small:hover, body.light .btn-danger-small:hover { background:#555; color:#fff; }
     body.light .settings-menu { background:#fff; border-color:#ddd; }
     body.light .settings-row input[type=text] { background:#fff; border-color:#ddd; color:#111; }
   </style>

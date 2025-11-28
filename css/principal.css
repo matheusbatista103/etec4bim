@@ -153,6 +153,9 @@ header {
   transform: scale(1.05);
 }
 
+body.light .movie-card a { background:#6a6a6a; color:#fff; }
+body.light .movie-card a:hover { background:#555; }
+
 /* Para garantir que o botão fique centralizado mesmo se mudar o conteúdo */
 .movie-card .movie-info,
 .movie-card a {
@@ -197,17 +200,17 @@ body.light .main-content { background:#f2f2f2; }
 body.light .logo { color:#111; }
 body.light .menu li a { color:#111; }
 body.light .menu li a:hover { background:#d7d7d7; color:#111; }
-body.light .movie-card { background:#fff; box-shadow:0 8px 18px rgba(0,0,0,0.15); }
+body.light .movie-card { background:#a1a1a1; box-shadow:0 8px 18px rgba(0,0,0,0.15); }
 body.light .movie-info { color:#111; }
 body.light .movie-info h3 { color:#0f0f0f; }
-body.light .movie-image { background:#fff; }
-body.light .movie-card a, body.light .btn-add-film { background:#cfcfcf; color:#fff; }
+body.light .movie-image { background:#b3b0b0; }
+body.light .movie-card a, body.light .btn-add-film { background:#969595; color:#202020; }
 body.light .movie-card a:hover, body.light .btn-add-film:hover { background:#bebebe; }
 body.light .movie-info p { color:#000; }
-body.light .empty-state-content { background:#fafafa; border-color:#ddd; }
+body.light .empty-state-content { background:#494848; border-color:#ddd; }
 body.light .empty-state-content h3 { color:#111; }
 body.light .empty-state-content p { color:#000; }
-body.light .searchbar input[type="text"] { background:#fff; border-color:#ddd; color:#000; }
+body.light .searchbar input[type="text"] { background:#9c9c9c; border-color:#ddd; color:#000; }
 
 
 .empty-state {
@@ -262,6 +265,9 @@ body.light .searchbar input[type="text"] { background:#fff; border-color:#ddd; c
   transform: translateY(-2px);
 }
 
+body.light .btn-add-film { background:#6a6a6a; color:#fff; }
+body.light .btn-add-film:hover { background:#555; }
+
 
 
 /* Barra de pesquisa */
@@ -269,11 +275,11 @@ body.light .searchbar input[type="text"] { background:#fff; border-color:#ddd; c
 .searchbar input[type="text"] { flex:1; padding:10px 12px; border-radius:8px; border:1px solid #333; background:#1a1a1a; color:#fff; }
 .searchbar button { padding:10px 16px; border-radius:8px; border:none; background:#333; color:#fff; font-weight:700; }
 .searchbar button:hover { background:#444; }
-body.light .searchbar button { background:#cfcfcf; color:#fff; }
-body.light .searchbar button:hover { background:#bebebe; }
+body.light .searchbar button { background:#e0e0e0; color:#222; }
+body.light .searchbar button:hover { background:#d0d0d0; color:#111; }
 .carousel { position: relative; }
 .carousel-controls { display:flex; gap:8px; justify-content:flex-end; margin-bottom:8px; }
 .carousel-btn { background:#222; color:#fff; border:none; border-radius:8px; width:40px; height:32px; cursor:pointer; }
 .carousel-btn:hover { background:#333; }
-body.light .carousel-btn { background:#cfcfcf; color:#fff; }
-body.light .carousel-btn:hover { background:#bebebe; }
+body.light .carousel-btn { background:#6a6a6a; color:#fff; }
+body.light .carousel-btn:hover { background:#555; }

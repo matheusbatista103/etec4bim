@@ -45,9 +45,9 @@ body.light .filme-card { background:#fff; box-shadow:0 8px 18px rgba(0,0,0,0.15)
 body.light .filme-info h2 { color:#111; border-bottom:1px solid rgba(0,0,0,0.1); }
 body.light .sinopse { color:#333; }
 body.light .btn-enviar,
-body.light .btn-voltar { background:#cfcfcf; color:#fff; }
+body.light .btn-voltar { background:#6a6a6a; color:#fff; }
 body.light .btn-enviar:hover,
-body.light .btn-voltar:hover { background:#bebebe; }
+body.light .btn-voltar:hover { background:#555; }
 body.light .reviews-section h3 { color:#111; }
 body.light .review { background: rgba(0,0,0,0.05); border-left-color:#999; }
 
